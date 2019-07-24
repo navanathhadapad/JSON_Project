@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomePageActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:paddingBottom="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetEnd="0dp"
+            app:contentInsetStartWithNavigation="0dp"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <!--android:layout_height="?attr/actionBarSize"-->
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="5dp"
+                    android:weightSum="1"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/home"
+                        android:layout_weight="0.1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/homeicon"/>
+
+                    <LinearLayout
+                        android:id="@+id/search"
+                        android:orientation="vertical"
+                        android:layout_weight="0.7"
+                        android:layout_marginLeft="5dp"
+                        android:layout_gravity="center"
+                        android:layout_width="0dp"
+                        android:background="@drawable/searchbar"
+                        android:layout_height="32dp">
+
+                        <Button
+                            android:id="@+id/btnSearch"
+                            android:background="@android:drawable/ic_menu_search"
+                            android:paddingLeft="12dp"
+                            android:layout_width="25dp"
+                            android:layout_height="wrap_content"/>
+
+                        <!--<android.support.v7.widget.SearchView
+                            android:id="@+id/action_search"
+                            app:iconifiedByDefault="false"
+                            android:paddingLeft="-10dp"
+                            android:focusable="true"
+                            android:clickable="true"
+                            android:focusableInTouchMode="false"
+                            app:searchIcon="@android:drawable/ic_menu_search"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"/>-->
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/notification"
+                        android:layout_weight="0.1"
+                        android:layout_width="0dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/noti_bell1"/>
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/user_img"
+                        android:visibility="gone"
+                        xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:layout_marginLeft="-12dp"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:src="#ff0905"
+                        app:civ_border_width="1dp"
+                        app:civ_border_color="#ff0905"/>
+
+                    <TextView
+                        android:visibility="gone"
+                        android:id="@+id/notiCount"
+                        android:textSize="10sp"
+                        android:layout_marginLeft="-10dp"
+                        android:textColor="#ffffff"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:id="@+id/setting"
+                        android:layout_weight="0.1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/more"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_home_page" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.BottomNavigationView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/navigation"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            app:itemIconSize="20dp"
+            app:labelVisibilityMode="labeled"
+            android:background="@color/transp"
+            app:itemIconTint="@drawable/selector_navigation"
+            app:itemTextColor="@drawable/selector_navigation"
+            android:layout_alignParentBottom="true"
+            app:menu="@menu/navigation_professional" />
+
+        <!--app:itemIconSize="18dp"-->
+
+    </RelativeLayout>
+
+    <!--<include layout="@layout/settings"/>-->
+
+</android.support.design.widget.CoordinatorLayout>
